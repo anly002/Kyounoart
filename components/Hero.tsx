@@ -24,8 +24,8 @@ export default function Hero() {
             className="pointer-events-none absolute right-0 bottom-0 h-10 w-10 border-r-[5px] border-b-[5px] border-pink-200 sm:h-12 sm:w-12 md:h-14 md:w-14"
           />
           <h1 className="font-[family-name:var(--font-display)] text-5xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="text-[#7dd3b0]">Kyo</span>
-            <span className="text-pink-200">uno</span>
+            <span className="text-[#7dd3b0]">KYO</span>
+            <span className="text-pink-200">UNO</span>
           </h1>
         </div>
         <p className="mt-5 text-sm font-semibold uppercase tracking-[0.45em] sm:text-base md:text-lg">
