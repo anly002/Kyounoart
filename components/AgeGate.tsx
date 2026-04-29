@@ -12,6 +12,8 @@ export default function AgeGate() {
       window.history.scrollRestoration = "manual";
     }
     window.scrollTo(0, 0);
+    const raf = requestAnimationFrame(() => window.scrollTo(0, 0));
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   useEffect(() => {
