@@ -27,7 +27,7 @@ export default function GallerySection({ year, artworks, onOpen }: Props) {
 
       {artworks.length === 0 ? (
         <p className="py-14 text-center text-sm tracking-[0.4em] text-neutral-400 uppercase">
-          Coming soon
+          Nothing but emptiness
         </p>
       ) : (
         <Masonry items={artworks} onOpen={onOpen} />

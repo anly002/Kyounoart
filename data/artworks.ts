@@ -13,8 +13,29 @@ export const YEARS: readonly Year[] = [2023, 2024, 2025, 2026] as const;
 export const artworksByYear: Record<Year, Artwork[]> = {
   2023: [
     {
-      title: "Untitled",
+      title: "Kafka",
       image: "/images/artworks/2023/120623.jpg",
+      year: 2023,
+      width: 1200,
+      height: 1600,
+    },
+    {
+      title: "Kafka_bw",
+      image: "/images/artworks/2023/083023.jpg",
+      year: 2023,
+      width: 1200,
+      height: 1600,
+    },
+    {
+      title: "Kobeni_bw",
+      image: "/images/artworks/2023/071923.jpg",
+      year: 2023,
+      width: 1200,
+      height: 1600,
+    },
+    {
+      title: "Daki_bw",
+      image: "/images/artworks/2023/062723.jpg",
       year: 2023,
       width: 1200,
       height: 1600,

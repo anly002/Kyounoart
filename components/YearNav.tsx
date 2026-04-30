@@ -54,7 +54,7 @@ export default function YearNav() {
       aria-label="Years"
       className="sticky top-0 z-30 border-b border-neutral-200/70 bg-white/85 backdrop-blur"
     >
-      <ul className="mx-auto flex max-w-5xl items-center justify-center gap-8 px-6 py-4 text-sm tracking-wide text-neutral-500">
+      <ul className="group/nav mx-auto flex max-w-5xl items-center justify-center gap-8 px-6 py-4 text-sm tracking-wide text-neutral-500">
         {ORDERED_YEARS.map((year) => {
           const isActive = year === active;
           return (
@@ -62,13 +62,20 @@ export default function YearNav() {
               <a
                 href={`#y-${year}`}
                 className={
-                  "font-[family-name:var(--font-display)] font-semibold transition-colors " +
-                  (isActive
-                    ? "text-neutral-700 underline underline-offset-8"
-                    : "hover:text-neutral-700")
+                  "group/item relative inline-block py-1 font-[family-name:var(--font-display)] font-semibold transition-colors hover:text-neutral-700 " +
+                  (isActive ? "text-neutral-700" : "")
                 }
               >
                 {year}
+                <span
+                  aria-hidden
+                  className={
+                    "pointer-events-none absolute inset-x-0 -bottom-0.5 h-[2px] origin-left bg-current transition-transform duration-300 ease-out group-hover/item:!scale-x-100 " +
+                    (isActive
+                      ? "scale-x-100 group-has-[a:hover]/nav:scale-x-0"
+                      : "scale-x-0")
+                  }
+                />
               </a>
             </li>
           );
