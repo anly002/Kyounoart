@@ -22,9 +22,9 @@ const EmailIcon = ({ className }: IconProps) => (
 );
 
 const SOCIALS = [
-  { name: "X", href: "#", Icon: XIcon },
-  { name: "Instagram", href: "#", Icon: InstagramIcon },
-  { name: "Email", href: "#", Icon: EmailIcon },
+  { name: "X", href: "https://x.com/kyounoart?s=21&t=X_fxvjxxnFdTX_w4Zr2LcQ", Icon: XIcon },
+  { name: "Instagram", href: "https://www.instagram.com/_an_yly?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr", Icon: InstagramIcon },
+  { name: "Email", href: "mailto:anthonyly42@gmail.com", Icon: EmailIcon },
 ] as const;
 
 type Props = {

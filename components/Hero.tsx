@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
         </div>
         <p className="mt-5 text-sm font-semibold uppercase tracking-[0.45em] sm:text-base md:text-lg">
-          Illustration
+          Art portfolio
         </p>
 
         <SocialLinks className="mt-10" />

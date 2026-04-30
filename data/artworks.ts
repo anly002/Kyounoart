@@ -43,14 +43,14 @@ export const artworksByYear: Record<Year, Artwork[]> = {
   ],
   2024: [
     {
-      title: "Untitled",
-      image: "/images/artworks/2024/021524v2.jpg",
+      title: "Daki",
+      image: "/images/artworks/2024/021524v3.jpg",
       year: 2024,
       width: 1200,
       height: 1600,
     },
     {
-      title: "Untitled",
+      title: "Acheron",
       image: "/images/artworks/2024/100724.jpg",
       year: 2024,
       width: 1200,
@@ -68,7 +68,7 @@ export const artworksByYear: Record<Year, Artwork[]> = {
     },
     {
       title: "Yorozu",
-      image: "/images/artworks/2026/yorozu041826.jpg",
+      image: "/images/artworks/2026/yorozu041826v2.jpg",
       year: 2026,
       width: 1200,
       height: 1600,
