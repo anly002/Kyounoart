@@ -7,16 +7,16 @@ import type { Artwork } from "@/data/artworks";
 type Props = {
   artwork: Artwork;
   onClose: () => void;
-  onNewer: () => void;
-  onOlder: () => void;
+  onPrev: () => void;
+  onNext: () => void;
 };
 
-export default function Lightbox({ artwork, onClose, onNewer, onOlder }: Props) {
+export default function Lightbox({ artwork, onClose, onPrev, onNext }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      else if (e.key === "ArrowLeft") onNewer();
-      else if (e.key === "ArrowRight") onOlder();
+      else if (e.key === "ArrowLeft") onPrev();
+      else if (e.key === "ArrowRight") onNext();
     };
     window.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
@@ -25,7 +25,7 @@ export default function Lightbox({ artwork, onClose, onNewer, onOlder }: Props) 
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
     };
-  }, [onClose, onNewer, onOlder]);
+  }, [onClose, onPrev, onNext]);
 
   return (
     <div
@@ -53,9 +53,9 @@ export default function Lightbox({ artwork, onClose, onNewer, onOlder }: Props) 
         type="button"
         onClick={(e) => {
           e.stopPropagation();
-          onNewer();
+          onPrev();
         }}
-        aria-label="Newer"
+        aria-label="Previous"
         className="absolute left-2 z-10 cursor-pointer text-white/70 transition-colors duration-150 hover:text-white sm:left-6"
       >
         <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
@@ -67,9 +67,9 @@ export default function Lightbox({ artwork, onClose, onNewer, onOlder }: Props) 
         type="button"
         onClick={(e) => {
           e.stopPropagation();
-          onOlder();
+          onNext();
         }}
-        aria-label="Older"
+        aria-label="Next"
         className="absolute right-2 z-10 cursor-pointer text-white/70 transition-colors duration-150 hover:text-white sm:right-6"
       >
         <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>

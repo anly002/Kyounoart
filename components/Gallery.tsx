@@ -1,17 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   YEARS,
   artworksByYear,
-  getFlatArtworks,
   type Artwork,
+  type FlatArtwork,
 } from "@/data/artworks";
 import GallerySection from "./GallerySection";
 import Lightbox from "./Lightbox";
 
 export default function Gallery() {
-  const flat = getFlatArtworks();
+  const orderedYears = useMemo(() => [...YEARS].reverse(), []);
+
+  const flat = useMemo<FlatArtwork[]>(() => {
+    const out: FlatArtwork[] = [];
+    for (const year of orderedYears) {
+      for (const a of artworksByYear[year]) {
+        out.push({ ...a, id: `${year}-${a.image}` });
+      }
+    }
+    return out;
+  }, [orderedYears]);
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const openByArtwork = (artwork: Artwork) => {
@@ -22,12 +33,12 @@ export default function Gallery() {
   };
 
   const close = () => setActiveIndex(null);
-  const goOlder = () =>
-    setActiveIndex((i) => (i === null ? i : (i - 1 + flat.length) % flat.length));
-  const goNewer = () =>
+  const goPrev = () =>
+    setActiveIndex((i) =>
+      i === null ? i : (i - 1 + flat.length) % flat.length,
+    );
+  const goNext = () =>
     setActiveIndex((i) => (i === null ? i : (i + 1) % flat.length));
-
-  const orderedYears = [...YEARS].reverse();
 
   return (
     <>
@@ -44,8 +55,8 @@ export default function Gallery() {
         <Lightbox
           artwork={flat[activeIndex]}
           onClose={close}
-          onOlder={goOlder}
-          onNewer={goNewer}
+          onPrev={goPrev}
+          onNext={goNext}
         />
       )}
     </>
