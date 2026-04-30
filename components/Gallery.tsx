@@ -22,9 +22,9 @@ export default function Gallery() {
   };
 
   const close = () => setActiveIndex(null);
-  const prev = () =>
+  const goOlder = () =>
     setActiveIndex((i) => (i === null ? i : (i - 1 + flat.length) % flat.length));
-  const next = () =>
+  const goNewer = () =>
     setActiveIndex((i) => (i === null ? i : (i + 1) % flat.length));
 
   const orderedYears = [...YEARS].reverse();
@@ -44,8 +44,8 @@ export default function Gallery() {
         <Lightbox
           artwork={flat[activeIndex]}
           onClose={close}
-          onPrev={prev}
-          onNext={next}
+          onOlder={goOlder}
+          onNewer={goNewer}
         />
       )}
     </>
