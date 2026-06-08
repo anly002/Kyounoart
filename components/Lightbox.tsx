@@ -33,7 +33,7 @@ export default function Lightbox({ artwork, onClose, onPrev, onNext }: Props) {
       aria-modal="true"
       aria-label={artwork.title}
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black/90 px-4 py-10 [animation:fade-in_180ms_ease-out] sm:px-6 sm:py-14 md:py-20"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black/90 px-4 py-6 [animation:fade-in_180ms_ease-out] sm:px-6 sm:py-8 md:py-12"
     >
       <button
         type="button"
