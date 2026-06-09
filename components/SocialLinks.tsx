@@ -6,14 +6,6 @@ const XIcon = ({ className }: IconProps) => (
   </svg>
 );
 
-const InstagramIcon = ({ className }: IconProps) => (
-  <svg viewBox="0 0 24 24" aria-hidden className={className} fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="3" y="3" width="18" height="18" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-  </svg>
-);
-
 const EmailIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" aria-hidden className={className} fill="none" stroke="currentColor" strokeWidth="1.5">
     <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -23,8 +15,7 @@ const EmailIcon = ({ className }: IconProps) => (
 
 const SOCIALS = [
   { name: "X", href: "https://x.com/kyounoart?s=21&t=X_fxvjxxnFdTX_w4Zr2LcQ", Icon: XIcon },
-  { name: "Instagram", href: "https://www.instagram.com/_an_yly?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr", Icon: InstagramIcon },
-  { name: "Email", href: "mailto:anthonyly42@gmail.com", Icon: EmailIcon },
+  { name: "Email", href: "mailto:clairaoki002@gmail.com", Icon: EmailIcon },
 ] as const;
 
 type Props = {
