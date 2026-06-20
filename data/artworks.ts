@@ -60,6 +60,13 @@ export const artworksByYear: Record<Year, Artwork[]> = {
   2025: [],
   2026: [
     {
+      title: "Lucy",
+      image: "/images/artworks/2026/lucy061126.JPG",
+      year: 2026,
+      width: 1200,
+      height: 1600,
+    },
+    {
       title: "Marin",
       image: "/images/artworks/2026/marin042826.jpg",
       year: 2026,
