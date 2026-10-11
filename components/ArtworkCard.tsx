@@ -41,7 +41,7 @@ export default function ArtworkCard({ artwork, onOpen }: Props) {
       onClick={onOpen}
       aria-label={`Open ${artwork.title}`}
       className={
-        "block w-full cursor-pointer overflow-hidden bg-neutral-50 transition-[opacity,transform] duration-700 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 " +
+        "relative block aspect-[3/4] w-full min-w-0 cursor-pointer overflow-hidden bg-white transition-[opacity,transform] duration-700 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 " +
         (revealed
           ? "translate-y-0 opacity-100"
           : "translate-y-6 opacity-0")
@@ -50,10 +50,9 @@ export default function ArtworkCard({ artwork, onOpen }: Props) {
       <Image
         src={artwork.image}
         alt={artwork.title}
-        width={artwork.width}
-        height={artwork.height}
+        fill
         sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-        className="h-auto w-full"
+        className="object-contain"
       />
     </button>
   );

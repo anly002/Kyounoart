@@ -83,10 +83,10 @@ export default function Lightbox({ artwork, onClose, onPrev, onNext }: Props) {
         alt={artwork.title}
         width={artwork.width}
         height={artwork.height}
-        sizes="90vh"
-        priority
+        sizes="(min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
+        loading="eager"
         onClick={(e) => e.stopPropagation()}
-        className="h-full w-auto max-w-none cursor-default object-contain [animation:pop-in_260ms_ease-out]"
+        className="h-full max-h-full w-auto max-w-full cursor-default object-contain [animation:pop-in_260ms_ease-out]"
       />
     </div>
   );
